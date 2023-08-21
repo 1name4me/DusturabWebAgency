@@ -1,0 +1,123 @@
+@use './colors.scss' as color;
+@use './fonts.scss' as fonts;
+@import './buttons.scss';
+
+.container {
+    margin: 0rem 22rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: color.$white;
+    padding: 2.5rem 0rem;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+    // box-shadow: 0 2px 4px 0 rgba(0,0,0,2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+   
+    .logo {
+        color: color.$black;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .nav-links a {
+        color: color.$black;
+        margin: 0.5em;
+        size: 16px;
+        font-weight: 600;
+    }
+    .nav-links a:hover {
+        color: color.$brown
+    }
+    
+}
+
+
+.hero {
+    background-color: color.$grey;
+    .container {
+        padding-top: 6rem;
+    }
+    &__title {
+        font-size: 85px;
+        font-weight: 700;
+        color: color.$white;
+        margin-bottom: 0.5em;
+        max-width: 40%;
+    }
+    &__description {
+        color: color.$white;
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 500;
+        max-width: 47%;
+        margin-bottom: 3em;
+    }
+    
+    .hero__button-container {
+        padding-bottom: 5em;
+        .pricing {
+            padding: 1.3em 2.4em;
+        }
+    }
+
+    .hero-contact_me {
+        margin-left: 2em;
+        font-size: 20px;
+        line-height: 30px;
+        color: color.$white;
+        font-weight: 600;
+    }
+    .hero-contact_me:hover {
+        color: color.$brown;
+    }
+}
+
+.about {
+    margin: 5rem 0rem;
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    img {
+        border-radius: 15px;
+        max-height: 70%;  
+    }
+    .about__container-grid2 {
+        display: flex;
+        justify-content: center;
+    }
+    .section-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        color: color.$brown;
+    }
+    &__title {
+        font-size: 44px;
+        font-weight: 600;
+        margin: 17px 0px 22px;
+        line-height: 55px;
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .about {
+        color: color.$black;
+        text-transform: uppercase;
+        font-weight: 600;
+        
+    }
+    .about:hover {
+        color: color.$brown;
+    }
+}
