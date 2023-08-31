@@ -23,10 +23,13 @@ time, mark, audio, video {
 body {
 	line-height: 1;
     font-family: 'Open Sans', sans-serif;
+	/* font-family: "Cerebri Sans Regular";  */
     /* margin: 0rem 22rem 0rem 22rem; */
 }
 ol, ul {
 	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 blockquote, q {
 	quotes: none;
