@@ -32,10 +32,7 @@ a {
 header {
     background-color: color.$white;
     padding: 1.5rem 0rem;
-    // position: fixed;
-    // top: 0;
-    // width: 100%;
-    // box-shadow: 0 2px 4px 0 rgba(0,0,0,2);
+    // z-index: 100;
     @include lg {
         padding: 1.5rem 0rem;
     }
@@ -66,14 +63,52 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #ffffff;
-    
+    background-color: #ffffff; 
     .logo {
         color: color.$black;
         font-weight: 700;
         text-transform: uppercase;
         align-self: center;
     }
+    .menu {
+        display: none;
+        @include md{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            transition: ease-in .2s;
+            top: -200;
+            left: 0;
+            min-width: 100%;
+            z-index: 99;
+            background: color.$white;
+            
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 2rem;
+            color: color.$black;
+            padding: 1rem 0rem 0rem 4rem;
+            @include xs {
+                padding: 1rem 0rem 0rem 1rem; 
+            }
+            a {
+                color: black;
+                font-size: 1.1rem;
+                &:hover {
+                    color: color.$brown;
+                }
+            }
+            
+        }
+    } 
+    .showMenu {
+        // height: 47vh;
+        top: 70;
+    }
+
+    
     .nav-links a {
         color: color.$black;
         margin: 0.5em 1.5rem;
@@ -101,29 +136,44 @@ nav {
             display: none;
         }
     }
+    .closeIcon {
+        display: none;
+    }
     .hamburg-icon {
         display: none;
         
         @include md {
+
+            // display: block;
+            // position: absolute;
+            // right: 20;
+            // top: 20;
+            // border: 2px solid color.$lightgrey;
+            // padding: 0.5rem 0.7rem;
+            // background: transparent;
+
             display: block;
-            position: absolute;
-            right: 20;
-            top: 20;
-            border: 2px solid color.$lightgrey;
+            position: fixed;
+            z-index: 100;
+            top: 1rem;
+            right: 1rem;
             padding: 0.5rem 0.7rem;
+            border: 2px solid color.$lightgrey;
+            background: color.$white;
+            cursor: pointer;
         }
         @include xs {
             display: block;
-            position: absolute;
-            right: 20;
-            top: 20;
+            position: fixed;
+            right: 1rem;
+            top: 1rem;
             border: 2px solid color.$lightgrey;
             padding: 0.5rem 0.7rem;
+            
         }
         i {
             color: color.$black;
         }
-        
     }
     
 }
@@ -225,12 +275,12 @@ nav {
             display: flex;
             flex-direction: column;
             // gap: 2rem;
-            gap: 1rem;
+            // gap: 1rem;
         }
         @include xs {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            // gap: 2rem;
         }
     }
     img {
@@ -318,15 +368,19 @@ nav {
     span {
         font-style: italic;
     }
-    .about {
-        color: color.$lightgrey;
-        text-transform: capitalize;
-        font-weight: 600;
-        text-decoration: underline;
-    }
-    .about:hover {
-        color: color.$brown;
-    }
+
+    // -----------------------------
+    // .about {
+    //     color: color.$lightgrey;
+    //     text-transform: capitalize;
+    //     font-weight: 600;
+    //     text-decoration: underline;
+    // }
+    // .about:hover {
+    //     color: color.$brown;
+    // }
+    // -----------------------------
+
     .company-name {
         margin-top: 3rem;
         font-size: 1.5rem;

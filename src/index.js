@@ -1,18 +1,9 @@
+// --------------
 // Sticky Navbar
 window.onscroll = function() {stickyNavbar()}
 
 const navbar = document.getElementById("header")
 const toggleSticky = "sticky"
-
-// window.addEventListener("scroll", () => {
-//     const currentScroll = window.scrollY;  
-//     if (currentScroll > 150) {
-//         navbar.classList.add(toggleSticky)
-//     } 
-//     else {
-//         navbar.classList.remove(toggleSticky)
-//     }
-// }) 
 
 function stickyNavbar() {
     const currentScroll = window.scrollY;  
@@ -23,18 +14,51 @@ function stickyNavbar() {
         navbar.classList.remove(toggleSticky)
     }
 }
-// -------------------------------
+// --------------
+
+// --------------
+// Adding space when clicking on links so the navbar doesn't hide the content
 
 const navbarHeight = navbar.offsetHeight;
 document.documentElement.style.setProperty(
     "--scroll-padding",
     navbarHeight + "px"
 )
+// --------------
 
-// document.querySelectorAll('a[href&="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         document.querySelector(this.getAttribute("href")).scrollIntoView()
-//     })
-// })
 
+// --------------
+// Hamburger menu
+
+const menu = document.querySelector(".menu")
+const links = document.getElementById(".link")
+const hamburgerIcon = document.querySelector(".hamburg-icon")
+const menuIcon = document.querySelector(".menuIcon")
+const closeIcon = document.querySelector(".closeIcon")
+const menuLinks = document.querySelectorAll("#link")
+const logo = document.querySelector(".logo")
+
+function toggleMenu() {
+    if (menu.classList.contains("showMenu")) {
+        menu.classList.remove("showMenu")
+        closeIcon.style.display = "none"
+        menuIcon.style.display = "block"
+    } 
+    else {
+        menu.classList.add("showMenu")
+        closeIcon.style.display = "block"
+        menuIcon.style.display = "none"
+    }
+}
+
+hamburgerIcon.addEventListener("click", toggleMenu)
+
+menuLinks.forEach(
+    function(menuLink) {
+        menuLink.addEventListener("click", toggleMenu)
+    }
+)
+
+logo.addEventListener("click", toggleMenu)
+
+// --------------
