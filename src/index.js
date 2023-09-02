@@ -7,7 +7,7 @@ const toggleSticky = "sticky"
 
 function stickyNavbar() {
     const currentScroll = window.scrollY;  
-    if (currentScroll > 110) {
+    if (currentScroll > 80) {
         navbar.classList.add(toggleSticky)
     } 
     else {
@@ -59,6 +59,9 @@ menuLinks.forEach(
     }
 )
 
-logo.addEventListener("click", toggleMenu)
+logo.addEventListener("click", () => {
+    menu.classList.remove("showMenu")
+})
+
 
 // --------------

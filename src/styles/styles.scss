@@ -121,6 +121,13 @@ nav {
             display: none;
         }
     }
+    .nav-links a:nth-child(4) {
+        background-color: color.$black;
+        color: color.$white;
+    }
+    .nav-links a:nth-child(4):hover {
+        color: color.$white;
+    }
     .nav-links a:hover {
         color: color.$brown
     }
@@ -950,6 +957,12 @@ footer {
                 margin: 2rem 0rem;
                 max-width: 60%;
                 line-height: 28px;
+                @include md {
+                    margin: 2rem 0rem 3rem 0rem;
+                }
+                @include xs {
+                    margin: 2rem 0rem 3rem 0rem;
+                }
             }
         }
         .footer-links{
